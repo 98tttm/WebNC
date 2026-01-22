@@ -1,0 +1,100 @@
+<h3>Customer Detail</h3>
+
+<!-- Router-linked customer detail -->
+<div *ngIf="selectedCustomer" style="margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; background: #eef5ff;">
+    <strong>Thông tin (từ router link):</strong>
+    <table border="1" style="margin-top: 8px; width: 100%; max-width: 500px;">
+        <tbody>
+            <tr>
+                <td width="120">CustomerID:</td>
+                <td>{{selectedCustomer.id}}</td>
+            </tr>
+            <tr>
+                <td>Customer Name:</td>
+                <td>{{selectedCustomer.name}}</td>
+            </tr>
+            <tr>
+                <td>Customer Age:</td>
+                <td>{{selectedCustomer.age}}</td>
+            </tr>
+            <tr>
+                <td>Customer Email:</td>
+                <td>{{selectedCustomer.email}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div *ngIf="routeCustomerNotFound" style="color: red; margin-bottom: 20px;">
+    Không tìm thấy khách hàng với ID {{currentRouteId}} từ router link.
+ </div>
+
+<!-- Search by ID -->
+<div style="margin-bottom: 20px;">
+    <strong>Search by ID:</strong><br>
+    ID: <input type="text" #customerid>
+    <button (click)="search_customer_by_id(customerid.value, tdid, tdname, tdage)">Search</button>
+
+    <table border="1" style="margin-top: 10px;">
+        <tbody>
+            <tr>
+                <td>CustomerID:</td>
+                <td #tdid></td>
+            </tr>
+            <tr>
+                <td>Customer Name:</td>
+                <td #tdname></td>
+            </tr>
+            <tr>
+                <td>Customer Age:</td>
+                <td #tdage></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<hr>
+
+<!-- Filter by Age -->
+<div style="margin-top: 20px;">
+    <strong>Filter by Age:</strong><br>
+    <label>
+        Age: <input type="number" [(ngModel)]="filterAge" style="width: 60px;">
+    </label>
+
+    <label style="margin-left: 10px;">
+        <input type="radio" name="filterType" value="older" [(ngModel)]="filterType"> Older Than
+    </label>
+
+    <label style="margin-left: 10px;">
+        <input type="radio" name="filterType" value="younger" [(ngModel)]="filterType"> Younger Than
+    </label>
+
+    <button (click)="filterByAge()" style="margin-left: 10px;">Filter</button>
+
+    <!-- Results Table -->
+    <div *ngIf="filteredCustomers.length > 0" style="margin-top: 15px;">
+        <strong>Results ({{filteredCustomers.length}} customers):</strong>
+        <table border="1" style="margin-top: 5px;">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let customer of filteredCustomers">
+                    <td>{{customer.id}}</td>
+                    <td>{{customer.name}}</td>
+                    <td>{{customer.age}}</td>
+                    <td>{{customer.email}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="filteredCustomers.length === 0" style="margin-top: 15px; color: gray;">
+        <em>No results. Click "Filter" to search.</em>
+    </div>
+</div>

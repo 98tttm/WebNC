@@ -1,0 +1,38 @@
+<h3>List Customer 2 (with Filter)</h3>
+
+<!-- Filter by Age -->
+<div style="margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; background: #f9f9f9;">
+    <strong>Filter by Age:</strong>
+    <label style="margin-left: 10px;">
+        Age: <input type="number" [(ngModel)]="filterAge" style="width: 60px;">
+    </label>
+
+    <label style="margin-left: 10px;">
+        <input type="radio" name="filterType" value="older" [(ngModel)]="filterType"> Older Than
+    </label>
+
+    <label style="margin-left: 10px;">
+        <input type="radio" name="filterType" value="younger" [(ngModel)]="filterType"> Younger Than
+    </label>
+
+    <button (click)="filterByAge()" style="margin-left: 10px;">Filter</button>
+    <button (click)="resetFilter()" style="margin-left: 5px;">Reset</button>
+
+    <span *ngIf="isFiltered" style="margin-left: 10px; color: green;">
+        Showing {{filteredCustomers.length}} of {{customers.length}} customers
+    </span>
+</div>
+
+<!-- Customer List -->
+<ol>
+    <li *ngFor="let c of filteredCustomers">
+        <div>
+            <p>{{c.id}} - {{c.name}} (Age: {{c.age}})</p>
+            <img [src]="c.picture" [alt]="c.name" width="100" height="100" />
+        </div>
+    </li>
+</ol>
+
+<p *ngIf="filteredCustomers.length === 0" style="color: red;">
+    No customers found matching the filter criteria.
+</p>
