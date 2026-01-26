@@ -1,0 +1,29 @@
+[
+  {
+    "context": [
+      "/exchange"
+    ],
+    "target": "https://www.dongabank.com.vn",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  {
+    "context": [
+      "/products"
+    ],
+    "target": "https://fakestoreapi.com",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  {
+    "context": [
+      "/bpi"
+    ],
+    "target": "https://api.coindesk.com/v1",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+]

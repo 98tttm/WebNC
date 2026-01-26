@@ -1,0 +1,54 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="card bg-dark text-white">
+                <div class="card-header text-center">
+                    <h2><i class="bi bi-currency-bitcoin"></i> Bitcoin Price Index</h2>
+                    <p class="mb-0" *ngIf="bitcoinData">Last Updated: {{bitcoinData.time.updated}}</p>
+                </div>
+                <div class="card-body">
+                    <p class="text-warning" *ngIf="errMessage">{{errMessage}}</p>
+
+                    <div class="row" *ngIf="bitcoinData">
+                        <!-- USD -->
+                        <div class="col-md-4 mb-3">
+                            <div class="card bg-success text-white h-100">
+                                <div class="card-body text-center">
+                                    <h4><i class="bi bi-currency-dollar"></i> {{bitcoinData.bpi.USD.code}}</h4>
+                                    <h2 class="display-6">{{bitcoinData.bpi.USD.rate}}</h2>
+                                    <p class="mb-0">{{bitcoinData.bpi.USD.description}}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- GBP -->
+                        <div class="col-md-4 mb-3">
+                            <div class="card bg-primary text-white h-100">
+                                <div class="card-body text-center">
+                                    <h4><i class="bi bi-currency-pound"></i> {{bitcoinData.bpi.GBP.code}}</h4>
+                                    <h2 class="display-6">{{bitcoinData.bpi.GBP.rate}}</h2>
+                                    <p class="mb-0">{{bitcoinData.bpi.GBP.description}}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- EUR -->
+                        <div class="col-md-4 mb-3">
+                            <div class="card bg-info text-white h-100">
+                                <div class="card-body text-center">
+                                    <h4><i class="bi bi-currency-euro"></i> {{bitcoinData.bpi.EUR.code}}</h4>
+                                    <h2 class="display-6">{{bitcoinData.bpi.EUR.rate}}</h2>
+                                    <p class="mb-0">{{bitcoinData.bpi.EUR.description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-3" *ngIf="bitcoinData">
+                        <small class="text-muted">{{bitcoinData.disclaimer}}</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

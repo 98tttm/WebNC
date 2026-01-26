@@ -1,0 +1,26 @@
+<p>ptb1 works!</p>
+<table>
+    <tbody>
+        <tr>
+            <td>He so a:</td>
+            <td>
+                <input type="text" #hsa>
+            </td>
+        </tr>
+        <tr>
+            <td>He so b:</td>
+            <td>
+                <input type="text" #hsb>
+            </td>
+        </tr>
+        <tr>
+            <td>Result:</td>
+            <td #result></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button (click)="get_solution(hsa,hsb,result)">Solution</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

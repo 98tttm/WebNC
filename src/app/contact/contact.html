@@ -1,0 +1,24 @@
+<p>contact works!</p>
+<table>
+    <tbody>
+        <tr>
+            <td>Name:</td>
+            <td>
+                <input type="text" [(ngModel)]="name" name="name">
+            </td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input type="email" [(ngModel)]="email" name="email" /></td>
+        </tr>
+        <tr>
+            <td>Phản hồi từ hệ thống:</td>
+            <td>{{phanhoi}}</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button (click)="sendContact()">Gửi Contact</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

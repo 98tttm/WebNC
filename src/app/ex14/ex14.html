@@ -1,0 +1,42 @@
+<h3>Ex14 - Product Catalog</h3>
+
+<table border="1">
+    <tbody>
+        <tr>
+            <th>Ma Danh Muc</th>
+            <th>Ten Danh Muc</th>
+        </tr>
+
+        <!-- Loop through categories -->
+        <ng-container *ngFor="let category of categories">
+            <tr>
+                <td>{{category.Cateid}}</td>
+                <td>{{category.CateName}}</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <!-- Nested table for products -->
+                    <table border="1" style="margin-left: 20px;">
+                        <tbody>
+                            <tr>
+                                <th>Ma San Pham</th>
+                                <th>Ten San Pham</th>
+                                <th>Gia San Pham</th>
+                                <th>Picture</th>
+                            </tr>
+                            <!-- Loop through products in category -->
+                            <tr *ngFor="let product of category.Products">
+                                <td>{{product.ProductId}}</td>
+                                <td>{{product.ProductName}}</td>
+                                <td>{{product.Price}}</td>
+                                <td>
+                                    <img [src]="product.Image" [alt]="product.ProductName" width="80" height="80" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>

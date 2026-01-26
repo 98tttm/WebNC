@@ -1,0 +1,92 @@
+<div class="container-fluid">
+    <form #registerForm="ngForm">
+        <h3 class="text-center">Đăng ký khóa học</h3>
+
+        <!-- Name Field -->
+        <div class="mb-3">
+            <label for="name">Tên:</label>
+            <input type="text" #name="ngModel" class="form-control" name="name" id="name" placeholder="Nhập tên"
+                [(ngModel)]="studentModel.name" required [class.is-invalid]="name.invalid && name.touched" />
+            <small class="text-danger" [class.d-none]="name.valid || name.untouched">
+                Bạn chưa nhập tên
+            </small>
+        </div>
+
+        <!-- Email Field -->
+        <div class="mb-3">
+            <label for="email">Email:</label>
+            <input type="email" [email]="true" #email="ngModel" required class="form-control" id="email" name="email"
+                placeholder="Nhập địa chỉ email" [(ngModel)]="studentModel.email"
+                [class.is-invalid]="email.invalid && email.touched" />
+            <div *ngIf="email.errors && (email.invalid || email.touched)">
+                <small class="text-danger" *ngIf="email.errors['required']">
+                    Bạn chưa nhập email
+                </small>
+                <small class="text-danger" *ngIf="email.errors['email']">
+                    Email không hợp lệ
+                </small>
+            </div>
+        </div>
+
+        <!-- Phone Field -->
+        <div class="mb-3">
+            <label for="phone">Điện thoại:</label>
+            <input type="text" #phone="ngModel" class="form-control" name="phone" id="phone"
+                placeholder="Nhập số điện thoại" [(ngModel)]="studentModel.phone" required
+                [class.is-invalid]="phone.invalid && phone.touched" />
+            <small class="text-danger" [class.d-none]="phone.valid || phone.untouched">
+                Bạn chưa nhập số điện thoại
+            </small>
+        </div>
+
+        <!-- Course Select -->
+        <div class="mb-3">
+            <label for="course">Chọn khóa học:</label>
+            <select class="form-select" id="course" name="course" [(ngModel)]="studentModel.course" #course="ngModel"
+                [class.is-invalid]="errFlag && course.touched" (blur)="validateCourse(course.value)"
+                (change)="validateCourse(course.value)">
+                <option value="none">--------------</option>
+                <option *ngFor="let course of courses">{{course}}</option>
+            </select>
+            <small class="text-danger" [class.d-none]="!errFlag || course.untouched">
+                Vui lòng chọn khóa học
+            </small>
+        </div>
+
+        <!-- Time Radio -->
+        <div class="mb-3">
+            <label>Chọn ca học:</label>
+            <div class="form-check form-check-inline ms-3">
+                <input class="form-check-input" type="radio" name="time" id="sang" value="sang"
+                    [(ngModel)]="studentModel.time">
+                <label class="form-check-label" for="sang">Sáng</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="time" id="toi" value="toi"
+                    [(ngModel)]="studentModel.time">
+                <label class="form-check-label" for="toi">Tối</label>
+            </div>
+        </div>
+
+        <!-- Checkbox -->
+        <div class="mb-3">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="agree" name="agree" #agree="ngModel" ngModel
+                    required [class.is-invalid]="agree.invalid && agree.touched">
+                <label class="form-check-label" for="agree">Đồng ý với điều khoản</label>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary"
+                [disabled]="registerForm.form.invalid || course.value === 'none' || agree.value === false"
+                (click)="onSubmit(registerForm)">
+                Submit
+            </button>
+        </div>
+
+        <!-- Form Output -->
+        <p>{{registerForm.value | json}}</p>
+    </form>
+</div>
