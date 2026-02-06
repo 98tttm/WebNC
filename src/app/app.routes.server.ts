@@ -38,6 +38,22 @@ export const serverRoutes: ServerRoute[] = [
     renderMode: RenderMode.Server
   },
   {
+    path: 'books',
+    renderMode: RenderMode.Server
+  },
+  {
+    path: 'books/new',
+    renderMode: RenderMode.Server
+  },
+  {
+    path: 'books/edit/:id',
+    renderMode: RenderMode.Server
+  },
+  {
+    path: 'books/:id',
+    renderMode: RenderMode.Server
+  },
+  {
     path: '**',
     renderMode: RenderMode.Prerender
   }

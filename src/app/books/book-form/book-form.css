@@ -1,0 +1,66 @@
+h2 {
+  margin-bottom: 1rem;
+}
+
+.error {
+  color: #c00;
+  margin-bottom: 0.5rem;
+}
+
+.book-form {
+  max-width: 500px;
+}
+
+.form-row {
+  margin-bottom: 1rem;
+}
+
+.form-row label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.form-row input[type="text"],
+.form-row input[type="number"],
+.form-row textarea {
+  width: 100%;
+  padding: 6px 8px;
+  box-sizing: border-box;
+}
+
+.form-row .btn-remove {
+  margin-left: 8px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.preview {
+  margin-top: 8px;
+}
+
+.preview img {
+  max-width: 120px;
+  max-height: 120px;
+  object-fit: contain;
+  border: 1px solid #ddd;
+}
+
+.form-actions {
+  margin-top: 1.5rem;
+}
+
+.form-actions button {
+  padding: 8px 16px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.btn-cancel {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.btn-cancel:hover {
+  text-decoration: underline;
+}

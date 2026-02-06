@@ -19,6 +19,10 @@ import { FakeProductComponent } from './fake-product/fake-product';
 import { BitcoinComponent } from './bitcoin/bitcoin';
 import { TemplateFormComponent } from './template-form/template-form';
 import { ReactiveFormComponent } from './reactive-form/reactive-form';
+import { BooksComponent } from './books/books';
+import { BookFormComponent } from './books/book-form/book-form';
+import { BookDetailComponent } from './books/book-detail/book-detail';
+import { FileUploadComponent } from './file-upload/file-upload';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'customers', pathMatch: 'full' },
@@ -44,6 +48,10 @@ export const routes: Routes = [
   { path: 'bitcoin', component: BitcoinComponent },
   { path: 'template-form', component: TemplateFormComponent },
   { path: 'reactive-form', component: ReactiveFormComponent },
+  { path: 'books', component: BooksComponent, title: 'Quản lý sách' },
+  { path: 'books/new', component: BookFormComponent, title: 'Thêm sách' },
+  { path: 'books/edit/:id', component: BookFormComponent, title: 'Sửa sách' },
+  { path: 'books/:id', component: BookDetailComponent, title: 'Chi tiết sách' },
+  { path: 'file-upload', component: FileUploadComponent, title: 'File Upload' },
 ];
-
 
