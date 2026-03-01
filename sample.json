@@ -1,0 +1,32 @@
+{
+  "E": [
+    	{
+            "content": "Lượng nước tiêu thụ phục vụ hoạt động sản xuất kinh doanh trong năm 2024 của Công ty đạt khoảng l,8 triệu mỶ nước, giảm 5% so với năm 2023.",
+            "score": 0.9871
+        },
+        {
+            "content": "Để tiết kiệm nguồn tài nguyên nước cho hoạt động sản xuất kinh doanh, Công ty đều có hệ thống xử lý nước tại các nhà máy sản xuât đê tái sử dụng lại.",
+            "score": 0.9912
+        }
+    ],
+  "S": [
+    	{
+            "content": "Đẩy mạnh đầu tư cho hoạt động R&D, lấy con người là trọng tâm.",
+            "score": 0.993
+        },
+        {
+            "content": "Thường xuyên cho các cán bộ, kỹ sư nòng côt được tiếp cận những công nghệ tiên tiên tại các nước phát triên.",
+            "score": 0.9818
+        }
+    ],
+  "G": [
+        {
+            "content": "Nhận xét về công tác quản lý của HĐQT, Ban Tổng giám đốc và các cán bộ quản lý trong năm 2024: Trong năm vừa qua, BKS không nhận được bất kỳ kiến nghị nào của cổ đông về sai phạm của HĐQT, BGÐ trong việc thực hiện nhiệm vụ.",
+            "score": 0.9909
+        },
+        {
+            "content": "HĐQT tiếp tục có những hoạt động tích cực về hiệu quả, phôi hợp chặt chẽ với TGĐ và BĐH để đưa ra các định hướng cũng như giải quyết kịp thời các vân đê phát sinh liên quan đên hoạt động sản xuât, kinh doanh của Tập đoàn.",
+            "score": 0.9908
+        }
+    ]
+}
