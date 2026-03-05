@@ -1,0 +1,11 @@
+{
+    "name": "client-fashion",
+    "version": "1.0.0",
+    "description": "Client module for Fashion display",
+    "scripts": {
+        "start": "http-server -p 4002 -c-1 --cors"
+    },
+    "dependencies": {
+        "http-server": "^14.1.1"
+    }
+}

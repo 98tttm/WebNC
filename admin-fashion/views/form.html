@@ -1,0 +1,53 @@
+<!-- Add / Edit Fashion Form -->
+<div class="form-container">
+    <div class="page-header">
+        <h1 class="page-title">{{formTitle}}</h1>
+        <a href="#!/" class="btn btn-secondary">← Back to List</a>
+    </div>
+
+    <div class="loading-container" ng-if="loading">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <div class="form-card" ng-if="!loading">
+        <form ng-submit="saveFashion()">
+            <div class="form-group">
+                <label class="form-label">Fashion Title *</label>
+                <input type="text" class="form-input" ng-model="fashion.title" placeholder="Enter fashion title"
+                    required />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Style *</label>
+                <select class="form-select" ng-model="fashion.style" required>
+                    <option value="" disabled>Select a Style</option>
+                    <option ng-repeat="s in styles" value="{{s}}">{{s}}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Thumbnail URL</label>
+                <input type="text" class="form-input" ng-model="fashion.thumbnail"
+                    placeholder="https://example.com/image.jpg" />
+            </div>
+
+            <div class="form-group" ng-if="fashion.thumbnail">
+                <label class="form-label">Preview</label>
+                <img ng-src="{{fashion.thumbnail}}" alt="Preview"
+                    style="max-width: 200px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.08);" />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Fashion Details (WYSIWYG)</label>
+                <textarea summernote ng-model="fashion.details"></textarea>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary" ng-disabled="saving">
+                    {{saving ? 'Saving...' : 'Save Fashion'}}
+                </button>
+                <a href="#!/" class="btn btn-cancel">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>

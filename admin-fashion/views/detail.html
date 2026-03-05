@@ -1,0 +1,23 @@
+<!-- Fashion Detail View -->
+<div class="detail-container">
+    <div class="page-header">
+        <h1 class="page-title">Fashion Detail</h1>
+        <a href="#!/" class="btn btn-secondary">← Back to List</a>
+    </div>
+
+    <div class="loading-container" ng-if="loading">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <div class="detail-card" ng-if="!loading">
+        <img ng-src="{{fashion.thumbnail}}" alt="{{fashion.title}}" class="detail-image" ng-if="fashion.thumbnail" />
+        <div class="detail-body">
+            <h2 class="detail-title">{{fashion.title}}</h2>
+            <div class="detail-meta">
+                <span class="style-badge">{{fashion.style}}</span>
+                <span class="table-date">{{fashion.creationDate | date:'MMMM dd, yyyy'}}</span>
+            </div>
+            <div class="detail-content" ng-bind-html="fashion.details"></div>
+        </div>
+    </div>
+</div>

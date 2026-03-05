@@ -1,0 +1,362 @@
+/* ===== Reset & Base ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #fafafa;
+    color: #1a1a1a;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===== Header ===== */
+.site-header {
+    background: #fff;
+    border-bottom: 2px solid #000;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.25rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 0.15em;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.logo-accent {
+    color: #e11d48;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+    background: #000;
+    color: #a1a1aa;
+    margin-top: auto;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+/* ===== Search Section ===== */
+.search-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem 0;
+}
+
+.search-bar {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.search-input {
+    width: 280px;
+    padding: 0.75rem 1.25rem;
+    border: 2px solid #e4e4e7;
+    border-radius: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 0.9rem;
+    transition: border-color 0.2s;
+    background: #fff;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #000;
+}
+
+.search-select {
+    padding: 0.75rem 1.25rem;
+    border: 2px solid #e4e4e7;
+    border-radius: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 0.9rem;
+    background: #fff;
+    cursor: pointer;
+    min-width: 180px;
+}
+
+.search-select:focus {
+    outline: none;
+    border-color: #000;
+}
+
+.search-btn {
+    padding: 0.75rem 2rem;
+    background: #000;
+    color: #fff;
+    border: 2px solid #000;
+    font-family: "Inter", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.search-btn:hover {
+    background: #333;
+}
+
+.search-btn.clear-btn {
+    background: #fff;
+    color: #000;
+}
+
+.search-btn.clear-btn:hover {
+    background: #f4f4f5;
+}
+
+/* ===== Style Section ===== */
+.style-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem 1rem;
+}
+
+.style-title {
+    font-family: "Playfair Display", serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #000;
+    margin-bottom: 1.5rem;
+}
+
+/* ===== Fashion Grid ===== */
+.fashion-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    padding: 0 2rem;
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+}
+
+.fashion-card {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.fashion-card:hover {
+    transform: translateY(-4px);
+}
+
+.fashion-card:hover .card-image {
+    transform: scale(1.05);
+}
+
+.card-image-wrapper {
+    width: 100%;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    position: relative;
+    background: #e4e4e7;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card-body {
+    padding: 0.75rem 0;
+}
+
+.card-title {
+    font-family: "Playfair Display", serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #1a1a1a;
+}
+
+.card-title:hover {
+    text-decoration: underline;
+}
+
+/* ===== Detail Page ===== */
+.detail-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.detail-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 2rem;
+    color: #71717a;
+    transition: color 0.2s;
+}
+
+.detail-back:hover {
+    color: #000;
+}
+
+.detail-header {
+    margin-bottom: 1.5rem;
+}
+
+.detail-style-label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #e11d48;
+    margin-bottom: 0.5rem;
+}
+
+.detail-title {
+    font-family: "Playfair Display", serif;
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #000;
+    margin-bottom: 0.75rem;
+}
+
+.detail-date {
+    font-size: 0.875rem;
+    color: #71717a;
+}
+
+.detail-hero-image {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    margin-bottom: 2rem;
+}
+
+.detail-content {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #374151;
+}
+
+.detail-content p {
+    margin-bottom: 1.25rem;
+}
+
+.detail-content img {
+    max-width: 100%;
+    margin: 1.5rem 0;
+}
+
+/* ===== Loading ===== */
+.loading-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #e4e4e7;
+    border-top: 3px solid #000;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ===== No Results ===== */
+.no-results {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #71717a;
+    font-size: 1rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+    .fashion-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .fashion-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+
+    .style-section {
+        padding: 2rem 1rem 0.5rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .search-bar {
+        flex-direction: column;
+    }
+
+    .search-input,
+    .search-select {
+        width: 100%;
+    }
+
+    .detail-title {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .fashion-grid {
+        grid-template-columns: 1fr;
+    }
+}

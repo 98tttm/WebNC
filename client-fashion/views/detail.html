@@ -1,0 +1,21 @@
+<!-- Fashion Detail View -->
+<div class="detail-page">
+    <a href="#!/" class="detail-back">← Back to Gallery</a>
+
+    <div class="loading-container" ng-if="loading">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <div ng-if="!loading">
+        <div class="detail-header">
+            <span class="detail-style-label">{{fashion.style}}</span>
+            <h1 class="detail-title">{{fashion.title}}</h1>
+            <span class="detail-date">{{fashion.creationDate | date:'MMMM dd, yyyy'}}</span>
+        </div>
+
+        <img ng-src="{{fashion.thumbnail}}" alt="{{fashion.title}}" class="detail-hero-image"
+            ng-if="fashion.thumbnail" />
+
+        <div class="detail-content" ng-bind-html="fashion.details"></div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+<!-- Fashion List View -->
+<div class="page-header">
+    <h1 class="page-title">Fashion Collection</h1>
+    <a href="#!/add" class="btn btn-primary">
+        <span>+</span> Add New Fashion
+    </a>
+</div>
+
+<div class="loading-container" ng-if="loading">
+    <div class="loading-spinner"></div>
+</div>
+
+<div class="fashion-table-container" ng-if="!loading">
+    <table class="fashion-table">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Style</th>
+                <th>Created</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="fashion in fashions">
+                <td>
+                    <img ng-src="{{fashion.thumbnail}}" alt="{{fashion.title}}" class="table-thumbnail" />
+                </td>
+                <td>
+                    <span class="table-title">{{fashion.title}}</span>
+                </td>
+                <td>
+                    <span class="style-badge">{{fashion.style}}</span>
+                </td>
+                <td>
+                    <span class="table-date">{{fashion.creationDate | date:'MMM dd, yyyy'}}</span>
+                </td>
+                <td>
+                    <div class="table-actions">
+                        <a href="#!/detail/{{fashion._id}}" class="btn btn-secondary btn-sm">View</a>
+                        <a href="#!/edit/{{fashion._id}}" class="btn btn-edit btn-sm">Edit</a>
+                        <button class="btn btn-danger btn-sm" ng-click="askDelete(fashion)">Delete</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
